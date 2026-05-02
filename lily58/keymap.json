@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "notes": "Colemak-DH keymap for Lily58, ported from the ZMK Rosebear layout. No hold-tap: top-row dedicated modifiers, layer-mo on outer thumbs, ESC/DEL on the row-3 extras. Outer pinky column is unused on both halves.",
+  "documentation": "See README.md.",
+  "keyboard": "lily58/rev1",
+  "keymap": "rosebear",
+  "layout": "LAYOUT",
+  "author": "",
+  "layers": [
+    [
+      "KC_NO",   "KC_LCTL", "KC_LALT", "KC_LSFT", "KC_LGUI", "KC_NO",                         "KC_NO",   "KC_RGUI", "KC_RSFT", "KC_RALT", "KC_RCTL", "KC_NO",
+      "KC_NO",   "KC_Q",    "KC_W",    "KC_F",    "KC_P",    "KC_B",                          "KC_J",    "KC_L",    "KC_U",    "KC_Y",    "KC_QUOT", "KC_NO",
+      "KC_NO",   "KC_A",    "KC_R",    "KC_S",    "KC_T",    "KC_G",                          "KC_M",    "KC_N",    "KC_E",    "KC_I",    "KC_O",    "KC_NO",
+      "KC_NO",   "KC_Z",    "KC_X",    "KC_C",    "KC_D",    "KC_V",    "KC_ESC",   "KC_DEL", "KC_K",    "KC_H",    "KC_COMM", "KC_DOT",  "KC_SLSH", "KC_NO",
+                                       "MO(2)",   "MO(1)",   "KC_TAB",  "KC_SPC",   "KC_ENT", "KC_BSPC", "MO(1)",   "MO(2)"
+    ],
+    [
+      "KC_NO",   "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_NO",                         "KC_NO",   "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_NO",
+      "KC_NO",   "KC_F10",  "KC_F7",   "KC_F8",   "KC_F9",   "KC_LCBR",                       "KC_RCBR", "KC_7",    "KC_8",    "KC_9",    "KC_EQL",  "KC_NO",
+      "KC_NO",   "KC_F11",  "KC_F4",   "KC_F5",   "KC_F6",   "KC_LPRN",                       "KC_RPRN", "KC_4",    "KC_5",    "KC_6",    "KC_MINS", "KC_NO",
+      "KC_NO",   "KC_F12",  "KC_F1",   "KC_F2",   "KC_F3",   "KC_LBRC", "KC_TRNS", "KC_TRNS", "KC_RBRC", "KC_1",    "KC_2",    "KC_3",    "KC_SCLN", "KC_NO",
+                                       "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_0"
+    ],
+    [
+      "KC_NO",   "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_NO",                         "KC_NO",   "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_NO",
+      "KC_NO",   "KC_HOME", "KC_PGUP", "KC_PGDN", "KC_END",  "KC_NO",                         "KC_BSLS", "KC_AMPR", "KC_ASTR", "KC_GRV",  "KC_PLUS", "KC_NO",
+      "KC_NO",   "KC_LEFT", "KC_UP",   "KC_DOWN", "KC_RGHT", "KC_NO",                         "KC_TILD", "KC_DLR",  "KC_PERC", "KC_CIRC", "KC_UNDS", "KC_NO",
+      "KC_NO",   "KC_NO",   "KC_MUTE", "KC_VOLD", "KC_VOLU", "KC_NO",   "KC_TRNS", "KC_TRNS", "KC_PIPE", "KC_EXLM", "KC_AT",   "KC_HASH", "KC_COLN", "KC_NO",
+                                       "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS"
+    ]
+  ]
+}
