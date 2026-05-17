@@ -201,7 +201,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case MT(MOD_LSFT, KC_S):
         case MT(MOD_RSFT, KC_E):
-            return 130;
+            return 140;
 
         case MT(MOD_LCTL, KC_A):
         case MT(MOD_LALT, KC_R):
@@ -424,12 +424,17 @@ void housekeeping_task_user(void) {
 #endif
 }
 
+static bool rosebear_is_thumb_key(keyrecord_t *record) {
+    return record->event.key.row == 3 || record->event.key.row == 7;
+}
+
 bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
                      uint16_t other_keycode, keyrecord_t *other_record) {
     switch (tap_hold_keycode) {
         case MT(MOD_LSFT, KC_S):
         case MT(MOD_RSFT, KC_E):
-            if (!achordion_opposite_hands(tap_hold_record, other_record) &&
+            if (!rosebear_is_thumb_key(other_record) &&
+                !achordion_opposite_hands(tap_hold_record, other_record) &&
                 TIMER_DIFF_16(other_record->event.time, tap_hold_record->event.time) < 180) {
                 return false;
             }
