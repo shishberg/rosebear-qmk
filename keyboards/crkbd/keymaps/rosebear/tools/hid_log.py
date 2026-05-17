@@ -46,7 +46,7 @@ def find_device_path(vid: int | None, pid: int | None) -> bytes:
 
     if not candidates:
         print("No QMK Raw HID device found.", file=sys.stderr)
-        print("Flash firmware with RAW_ENABLE=yes, then unplug/replug the keyboard.", file=sys.stderr)
+        print("Build with -e ROSEBEAR_HID_LOG=yes, then unplug/replug the keyboard.", file=sys.stderr)
         raise SystemExit(1)
 
     if len(candidates) > 1:
