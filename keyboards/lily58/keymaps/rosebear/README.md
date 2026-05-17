@@ -71,6 +71,11 @@ No local QMK toolchain required — [QMK Configurator](https://config.qmk.fm/) c
 4. Download the `.hex` firmware when compilation finishes.
 5. Flash each half separately using [QMK Toolbox](https://qmk.fm/toolbox) or `avrdude`. Reset by double-tapping the reset button on the Pro Micro (or bridging RST to GND).
 
-If you prefer a local build, the file is also valid for `qmk compile -kb lily58/rev1 -km rosebear` — copy/symlink this directory into `qmk_firmware/keyboards/lily58/keymaps/rosebear/` first (or use `qmk compile keymap.json` directly).
+If you prefer a local build, configure this repository as an external userspace:
+
+```sh
+qmk config user.overlay_dir=/path/to/rosebear-qmk
+qmk compile -kb lily58/rev1 -km rosebear
+```
 
 The keyboard in `keymap.json` is set to `lily58/rev1`. If you have a Lily58 Pro / Glow variant, change that field before compiling.

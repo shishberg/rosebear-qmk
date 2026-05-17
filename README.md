@@ -1,10 +1,30 @@
 # Rosebear QMK
 
-QMK keymaps ported from the [Rosebear ZMK](https://github.com/shishberg/rosebear-zmk) layout (Colemak-DH).
+External QMK userspace for Rosebear keymaps ported from
+[Rosebear ZMK](https://github.com/shishberg/rosebear-zmk).
 
-Each board has its own subdirectory with a self-contained `keymap.json` and README:
+## Keymaps
 
-- [`lily58/`](./lily58/) — Lily58. Ported variant with **no hold-tap** (dedicated modifiers on the top row, layer-momentary on the outer thumbs). 3 layers.
-- [`crkbd/`](./crkbd/) — Corne (`crkbd/rev1`). Direct translation of the ZMK keymap, with homerow mods and layer-tap thumbs preserved. 7 layers.
+- [`keyboards/crkbd/keymaps/rosebear`](./keyboards/crkbd/keymaps/rosebear/) - Corne (`crkbd/rev1`) Colemak-DH layout with homerow mods, layer-tap thumbs, RGB matrix handling, and Raw HID logging tools for hold-tap analysis.
+- [`keyboards/lily58/keymaps/rosebear`](./keyboards/lily58/keymaps/rosebear/) - Lily58 (`lily58/rev1`) Colemak-DH layout that uses dedicated modifier keys instead of mod-taps.
 
-Both keymaps are valid QMK Configurator `keymap.json` files — open <https://config.qmk.fm/>, **Import Keymap**, and compile.
+## Local Setup
+
+Point QMK at this userspace:
+
+```sh
+qmk config user.overlay_dir="$(pwd)"
+```
+
+Build a target:
+
+```sh
+qmk compile -kb crkbd/rev1 -km rosebear
+qmk compile -kb lily58/rev1 -km rosebear
+```
+
+Or build every target listed in [`qmk.json`](./qmk.json):
+
+```sh
+qmk userspace-compile
+```
