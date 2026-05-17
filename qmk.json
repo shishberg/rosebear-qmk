@@ -1,0 +1,9 @@
+{
+  "userspace_version": "1.1",
+  "build_targets": [
+    [
+      "crkbd/rev1",
+      "rosebear"
+    ]
+  ]
+}

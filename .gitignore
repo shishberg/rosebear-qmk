@@ -1,1 +1,15 @@
 .DS_Store
+.venv/
+__pycache__/
+*.pyc
+*.hex
+*.uf2
+*.bin
+*.elf
+*.map
+*.sym
+*.eep
+*.log
+rosebear-hid-log*.csv
+rosebear-holdtap-analysis*.csv
+rosebear-*.json
