@@ -199,14 +199,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case MT(MOD_LSFT, KC_S):
-        case MT(MOD_RSFT, KC_E):
-            return 140;
-
         case MT(MOD_LCTL, KC_A):
         case MT(MOD_LALT, KC_R):
+        case MT(MOD_LSFT, KC_S):
         case MT(MOD_LGUI, KC_T):
         case MT(MOD_RGUI, KC_N):
+        case MT(MOD_RSFT, KC_E):
         case MT(MOD_RALT, KC_I):
         case MT(MOD_RCTL, KC_O):
             return 200;
@@ -424,23 +422,8 @@ void housekeeping_task_user(void) {
 #endif
 }
 
-static bool rosebear_is_thumb_key(keyrecord_t *record) {
-    return record->event.key.row == 3 || record->event.key.row == 7;
-}
-
 bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
                      uint16_t other_keycode, keyrecord_t *other_record) {
-    switch (tap_hold_keycode) {
-        case MT(MOD_LSFT, KC_S):
-        case MT(MOD_RSFT, KC_E):
-            if (!rosebear_is_thumb_key(other_record) &&
-                !achordion_opposite_hands(tap_hold_record, other_record) &&
-                TIMER_DIFF_16(other_record->event.time, tap_hold_record->event.time) < 180) {
-                return false;
-            }
-            break;
-    }
-
     return true;
 }
 
@@ -452,10 +435,6 @@ uint16_t achordion_streak_chord_timeout(uint16_t tap_hold_keycode,
     // decision, but its typing-streak logic can turn a would-be hold back into
     // a tap when the surrounding key presses look like normal typing.
     switch (tap_hold_keycode) {
-        case MT(MOD_LSFT, KC_S):
-        case MT(MOD_RSFT, KC_E):
-            return 100;
-
         case LT(3, KC_ESC):
         case LT(2, KC_TAB):
         case LT(1, KC_SPC):
@@ -463,8 +442,10 @@ uint16_t achordion_streak_chord_timeout(uint16_t tap_hold_keycode,
 
         case MT(MOD_LCTL, KC_A):
         case MT(MOD_LALT, KC_R):
+        case MT(MOD_LSFT, KC_S):
         case MT(MOD_LGUI, KC_T):
         case MT(MOD_RGUI, KC_N):
+        case MT(MOD_RSFT, KC_E):
         case MT(MOD_RALT, KC_I):
         case MT(MOD_RCTL, KC_O):
         case LT(1, KC_ENT):
