@@ -451,7 +451,7 @@ uint16_t achordion_streak_chord_timeout(uint16_t tap_hold_keycode,
         case LT(1, KC_ENT):
         case LT(2, KC_BSPC):
         case LT(3, KC_DEL):
-            return 125;
+            return 60;
 
         default:
             return 0;
